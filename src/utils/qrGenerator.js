@@ -1,9 +1,9 @@
 import QRCode from 'qrcode';
 import path from 'path';
 
-// Conditional fs import for server-side
+// Only import fs when running on the server
 const fs = typeof window === 'undefined' 
-  ? await import('fs/promises') 
+  ? require('fs').promises 
   : null;
 
 const hints = {
@@ -22,6 +22,12 @@ const hints = {
 export async function generateQRCodes() {
   // Only generate QR codes on the server side
   if (typeof window !== 'undefined') {
+    return hints;
+  }
+
+  // Ensure fs is available (only on server)
+  if (!fs) {
+    console.error('File system not available');
     return hints;
   }
 
