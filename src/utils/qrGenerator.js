@@ -36,7 +36,7 @@ export async function generateQRCodes() {
 
   // Generate QR codes for each hint
   for (let i = 1; i <= 10; i++) {
-    const url = `http://localhost:3000/hint/${i}`;
+    const url = `https://hackerz-treasure-hunt-9ci1.vercel.app/hint/${i}`;
     const qrPath = path.join(publicFolder, `hint-${i}.png`);
     
     try {
