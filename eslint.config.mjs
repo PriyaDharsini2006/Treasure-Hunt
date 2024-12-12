@@ -9,10 +9,12 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-export default {
-  extends: compat.extends("next/core-web-vitals"),
-  parserOptions: {
-    ecmaVersion: 2021,  // Ensure ECMAScript version
-    sourceType: "module",  // Use module source type
+export default [
+  {
+    extends: ["next/core-web-vitals"], // This should be an array as part of flat config
+    parserOptions: {
+      ecmaVersion: 2021,
+      sourceType: "module",
+    },
   },
-};
+];
