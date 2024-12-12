@@ -2,7 +2,7 @@
 import { PrismaClient } from '@prisma/client';
 import { NextResponse } from 'next/server';
 import { getHint } from '../../../utils/qrGenerator';
-import prisma from '../../../lib/prisma';
+import prisma from '../../../../lib/prisma';
 const prisma = new PrismaClient();
 
 export async function POST(request) {
