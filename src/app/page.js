@@ -99,3 +99,4 @@ export default function Home() {
     </div>
   );
 }
+//  "node src/scripts/generate-qrcodes.cjs"
