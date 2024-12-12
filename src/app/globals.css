@@ -3,6 +3,3 @@
 @tailwind utilities;
 
 /* Your global styles */
-body {
-  @apply bg-white text-black;
-}
