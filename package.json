@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build && prisma generate",  
     "start": "next start",
+    "postinstall": "prisma generate",
     "lint": "next lint",
     "generate:qrcodes": "node src/scripts/generate-qrcodes.js",
     "prisma:generate": "prisma generate",
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "@eslint/eslintrc": "^3",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "postcss": "^8.4.49",
