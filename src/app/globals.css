@@ -3,3 +3,36 @@
 @tailwind utilities;
 
 /* Your global styles */
+@keyframes text-glitch {
+    0%, 100% { transform: translate(0); }
+    10% { transform: translate(-2px, -2px); }
+    20% { transform: translate(2px, 2px); }
+    30% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+  }
+  
+  @keyframes text-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-text {
+    animation: text-reveal 0.5s ease-out,
+               text-glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+    text-shadow: 
+      1px 1px 0 rgba(0,245,208,0.3), 
+      -1px -1px 0 rgba(255,0,0,0.3);
+  }
+  
+  .animate-text:hover {
+    animation: text-glitch 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+    text-shadow: 
+      2px 2px 0 rgba(0,255,0,0.4), 
+      -2px -2px 0 rgba(255,0,0,0.4);
+  }
